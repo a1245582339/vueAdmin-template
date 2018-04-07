@@ -27,7 +27,7 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/dashboard',
     name: 'Dashboard',
-    hidden: true,
+    hidden: true, // hidden为true的将不会在sidebar中渲染，默认为false
     children: [{
       path: 'dashboard',
       component: () => import('@/views/dashboard/index')
@@ -35,17 +35,17 @@ export const constantRouterMap = [
   },
 
   {
-    path: '/example',
+    path: '/courses',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/courses/table',
+    name: 'courses',
+    meta: { title: '课程管理', icon: 'example' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
+        path: 'edit',
+        name: 'Edit',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: '课程编辑', icon: 'table' }
       },
       {
         path: 'tree',
